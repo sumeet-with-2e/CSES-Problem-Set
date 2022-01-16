@@ -35,15 +35,24 @@ void solve()
 { 	
 	int n;
 	cin>>n;
-	while(n!=1)
-	{
-		cout<<n<<" ";
-		if(n%2==0)
-			n=n/2;
-		else
-			n=(n*3)+1;
+	vector<int> v;
+	for(int i=0;i<n-1;i++)
+	{	
+		int temp;
+		cin>>temp;
+		v.push_back(temp);
 	}
-	cout<<1<<endl;
+	sort(all(v));
+	int flag=0;
+	for(int i=0;i<n-1;i++)
+	{
+		if(i+1!=v[i])
+		{	flag=1;
+			cout<<i+1;
+			break;
+		}
+	}
+	flag==0?cout<<n<<endl:cout<<endl;
 } 
  
 signed main(){
